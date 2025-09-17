@@ -33,30 +33,29 @@ public class MathUtil {
         return total;
     }
 
-    public static double sum(double[]numbers){
+    public static double sum(double[] numbers) {
         double total = 0.0;
-        for (double n : numbers){
+        for (double n : numbers) {
             total += n;
         }
         return total;
     }
 
-
-    //max ja min
-    public static int max(int[] numbers){
+    // max ja min
+    public static int max(int[] numbers) {
         int max = numbers[0];
-        for(int n : numbers){
-            if(n > max){
+        for (int n : numbers) {
+            if (n > max) {
                 max = n;
             }
         }
         return max;
     }
 
-        public static int min(int[] numbers){
+    public static int min(int[] numbers) {
         int min = numbers[0];
-        for(int n : numbers){
-            if(n < min){
+        for (int n : numbers) {
+            if (n < min) {
                 min = n;
             }
         }
