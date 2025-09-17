@@ -17,9 +17,12 @@ package fi.viikko2.task02;
 
 public class Main {
     public static void main(String[] args) {
-        int[] a = {1,2,3};
+        int[] a = {3,5,2};
         double[] b = {1.5,2.5,3.0};
-        System.out.println(MathUtil.placeholderInt());
-        System.out.println(MathUtil.placeholderDouble());
+        System.out.println(MathUtil.sum(a));
+        System.out.println(MathUtil.sum(b));
+
+        System.out.println(MathUtil.max(a));
+        System.out.println(MathUtil.min(a));
     }
 }

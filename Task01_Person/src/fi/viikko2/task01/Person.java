@@ -18,25 +18,35 @@
 
 package fi.viikko2.task01;
 
+import java.util.Objects;
+
 public class Person {
+    private String name;
+    private int age;
 
+    // konstruktori
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
+    public int birthday() {
+        age++;
+        return age;
+    }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 
-   
-
-@Override
-public String toString() {
-    //  Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
-    throw new UnsupportedOperationException("TODO: implement toString()");
-
-}
-
-@Override
-public boolean equals(Object o) {
-    //  Toteuta equals. Kun olet valmis, POISTA alla oleva rivi.
-    throw new UnsupportedOperationException("TODO: implement equals(Object)");
-
-}
-
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Person person = (Person) o;
+        return age == person.age && Objects.equals(name, person.name);
+    }
 }

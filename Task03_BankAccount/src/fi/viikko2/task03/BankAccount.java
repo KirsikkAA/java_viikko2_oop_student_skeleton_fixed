@@ -17,20 +17,56 @@
 
 package fi.viikko2.task03;
 
+import java.util.Objects;
+
+//import fi.viikko2.task01.Person;
+
 public class BankAccount {
-   
+    private String accountNumber;
+    private double balance;
 
+    // konstruktori
+    public BankAccount(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        if (balance < 0) {
+            this.balance = 0.0;
+        } else {
+            this.balance = initialBalance;
+        }
+    }
 
+    public boolean deposit(double amount) {
+        if (amount > 0) {
+            balance += amount; // eli balance = balance + amount
+            return true; 
+        }
+        return false;
+    }
 
-    @Override
-    public String toString(){
-        //  Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
-        throw new UnsupportedOperationException("TODO: implement toString()");
+    public boolean withdraw(double amount) {
+        if (amount > 0 && balance >= amount ) {
+            balance -= amount;  // eli balance = balance - amount
+            return true;
+        }
+        return false;
+    }
+
+    public double getBalance(){
+        return balance;
     }
 
     @Override
-    public boolean equals(Object o){
-        //  Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
-        throw new UnsupportedOperationException("TODO: implement equals(Object)");
+    public String toString() {
+        return accountNumber + balance;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        BankAccount that = (BankAccount) o;
+        return Objects.equals(accountNumber, that.accountNumber);
     }
 }
